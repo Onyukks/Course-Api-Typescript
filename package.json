@@ -1,0 +1,44 @@
+{
+  "name": "projectapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "start-dev": "tsc-watch --onSuccess \"node dist/app.js\"",
+    "dev": "npm-run-all clean build start-dev",
+    "populate-db": "npm-run-all clean build run-populate-db-script",
+    "run-populate-db-script": "node dist/models/populatedb.js",
+    "delete-db": "npm-run-all clean build run-delete-db-script",
+    "run-delete-db-script": "node dist/models/deletedb.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/validator": "^13.12.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
+    "tsc-watch": "^6.2.0",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20",
+    "validator": "^13.12.0",
+    "winston": "^3.14.2"
+  }
+}
